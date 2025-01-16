@@ -1,0 +1,126 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  @media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .member img {
+        width: 80%;  /* Allow images to shrink to 80% of screen width */
+        height: auto;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;  /* Stack nav links vertically */
+        text-align: center;
+    }
+
+    .text-overlay {
+        font-size: 0.9rem;  /* Adjust text size for smaller screens */
+        padding: 10px 20px;
+    }
+
+    form {
+        width: 90%;  /* Form takes up more width on mobile */
+    }
+
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+/* Turn the body or a .wrapper into a flex container */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* ensures the wrapper is at least the full viewport height */
+  }
+/* Let the main content flex (grow) so the footer gets pushed down */
+main {
+  flex: 1;
+  padding-bottom: 60px;
+}
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 1rem;
+}
+
+
+.details {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+
+.couple {
+    margin-top: 50px;  /* Push it further down */
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.couple .grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.couple .grid img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.flags {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.flags img {
+    width: 100px;
+    margin: 0 15px;
+}
+
+#myFooter {
+    position: fixed;   /* pinned */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    text-align: center;
+    height: 70px;  /* for example */
+    line-height: 60px;
+  }
