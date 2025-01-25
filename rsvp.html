@@ -1,53 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSVP - NJ & Lukas</title>
-    <link rel="stylesheet" href="css/rsvp.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RSVP - NJ & Lukas</title>
+  <link rel="stylesheet" href="css/rsvp.css">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const rsvpDeadline = new Date("October 26, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+
+      if (now > rsvpDeadline) {
+        const rsvpMenuItem = document.getElementById('rsvpLink');
+        if (rsvpMenuItem) {
+          rsvpMenuItem.style.display = 'none';
+        }
+      }
+    });
+  </script>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>RSVP</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rsvp.html">RSVP</a></li>
-                    <li><a href="when-where.html">When and Where</a></li>
-                    <li><a href="info.html">Additional Info</a></li>
-                    <li><a href="entourage.html">Bridal Entourage</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <h1>RSVP</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rsvp.html" id="rsvpLink">RSVP</a></li>
+          <li><a href="when-where.html">When and Where</a></li>
+          <li><a href="info.html">Additional Info</a></li>
+          <li><a href="travelling.html">Travelling in Tunisia</a></li>
+          <li><a href="getting_ready.html">Getting Ready</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section class="rsvp-form">
-        <div class="container">
-            <h2>RSVP to Our Wedding</h2>
-            <form action="submit_rsvp.php" method="post">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+  <section class="rsvp-form">
+    <div class="container">
+      <h2>RSVP to Our Wedding</h2>
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+      <div id="rsvpFormContainer">
+        <form action="submit_rsvp.php" method="post">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
 
-                <label for="attendance">Will you attend?</label>
-                <select id="attendance" name="attendance" required>
-                    <option value="yes">Yes, I'll be there</option>
-                    <option value="no">Sorry, I can't make it</option>
-                </select>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
 
-                <label for="diet">Dietary Restrictions</label>
-                <textarea id="diet" name="diet"></textarea>
+          <label for="attendance">Will you attend?</label>
+          <select id="attendance" name="attendance" required>
+            <option value="yes">Yes, I'll be there</option>
+            <option value="no">Sorry, I can't make it</option>
+          </select>
 
-                <button type="submit">Submit RSVP</button>
-            </form>
-        </div>
-    </section>
+          <label for="plusOne">Will you bring a +1?</label>
+          <select id="plusOne" name="plusOne" required>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
 
-    <footer>
-        <p>&copy; 2025 NJ & Lukas Wedding</p>
-    </footer>
+          <label for="bringKids">Will you bring kids?</label>
+          <select id="bringKids" name="bringKids" required>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+
+          <div id="kidsCountContainer" style="display: none;">
+            <label for="kidsCount">How many kids?</label>
+            <input type="number" id="kidsCount" name="kidsCount" min="1">
+          </div>
+
+          <label for="diet">Dietary Restrictions</label>
+          <textarea id="diet" name="diet"></textarea>
+
+          <button type="submit">Submit RSVP</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const bringKidsSelect = document.getElementById('bringKids');
+    const kidsCountContainer = document.getElementById('kidsCountContainer');
+    bringKidsSelect.addEventListener('change', function() {
+      if (this.value === 'yes') {
+        kidsCountContainer.style.display = 'block';
+      } else {
+        kidsCountContainer.style.display = 'none';
+      }
+    });
+
+    const rsvpDeadline = new Date("October 26, 2025 00:00:00").getTime();
+    const now = new Date().getTime();
+    if (now > rsvpDeadline) {
+      const rsvpFormContainer = document.getElementById('rsvpFormContainer');
+      rsvpFormContainer.innerHTML = "<p>RSVP is now closed. Thank you for your interest!</p>";
+    }
+  </script>
 </body>
 </html>

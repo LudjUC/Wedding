@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Additional Information - NJ & Lukas</title>
     <link rel="stylesheet" href="css/info.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const rsvpDeadline = new Date("October 26, 2025 00:00:00").getTime();
+          const now = new Date().getTime();
+    
+          if (now > rsvpDeadline) {
+            const rsvpMenuItem = document.getElementById('rsvpLink');
+            if (rsvpMenuItem) {
+              rsvpMenuItem.style.display = 'none';
+            }
+          }
+        });
+      </script>
 </head>
 <body>
     <header>
@@ -13,10 +26,11 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="rsvp.html">RSVP</a></li>
+                    <li><a href="rsvp.html" id="rsvpLink">RSVP</a></li>
                     <li><a href="when-where.html">When and Where</a></li>
                     <li><a href="info.html">Additional Info</a></li>
-                    <li><a href="entourage.html">Bridal Entourage</a></li>
+                    <li><a href="travelling.html">Travelling in Tunisia</a></li>
+                    <li><a href="getting_ready.html">Getting Ready</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,14 +39,14 @@
     <section class="info-section">
         <div class="container">
             <h2>Important Details</h2>
-            <p><strong>Dress Code:</strong> Formal / Dark suit</p>
-            <p><strong>Gifts:</strong> Contributions to our honeymoon fund are appreciated!</p>
-            <p><strong>Accommodations:</strong> Hotel Khayem Garden</p>
+            <p><strong>Dress Code:</strong> Tunisian Dress</p>
+            <p><strong>Contact for any questions:</strong> <br>
+                Email: njandlukas2025@gmail.com <br>
+                Whatsapp: +46 73 230 2131</p>
+            <p><strong>Accommodations:</strong> Hotel Imen Nabeul</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 NJ & Lukas Wedding</p>
-    </footer>
+
 </body>
 </html>

@@ -10,23 +10,23 @@ html, body {
     }
 
     .member img {
-        width: 80%;  /* Allow images to shrink to 80% of screen width */
+        width: 80%;  
         height: auto;
     }
 
     nav ul li {
         display: block;
-        margin: 10px 0;  /* Stack nav links vertically */
+        margin: 10px 0;  
         text-align: center;
     }
 
     .text-overlay {
-        font-size: 0.9rem;  /* Adjust text size for smaller screens */
+        font-size: 0.9rem;  
         padding: 10px 20px;
     }
 
     form {
-        width: 90%;  /* Form takes up more width on mobile */
+        width: 90%;  
     }
 
     footer {
@@ -36,13 +36,11 @@ html, body {
     }
 }
 
-/* Turn the body or a .wrapper into a flex container */
 .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100%; /* ensures the wrapper is at least the full viewport height */
+    min-height: 100%; 
   }
-/* Let the main content flex (grow) so the footer gets pushed down */
 main {
   flex: 1;
   padding-bottom: 60px;
@@ -75,7 +73,9 @@ nav ul li a {
     color: #666;
     font-size: 1rem;
 }
-
+.wnd-font-size-190{
+    color: lightblue;
+}
 
 .details {
     text-align: center;
@@ -84,7 +84,7 @@ nav ul li a {
 
 
 .couple {
-    margin-top: 50px;  /* Push it further down */
+    margin-top: 50px;  
     text-align: center;
     position: relative;
     z-index: 2;
@@ -113,14 +113,3 @@ nav ul li a {
     width: 100px;
     margin: 0 15px;
 }
-
-#myFooter {
-    position: fixed;   /* pinned */
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #f3f3f3;
-    text-align: center;
-    height: 70px;  /* for example */
-    line-height: 60px;
-  }

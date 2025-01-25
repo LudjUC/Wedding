@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>When and Where - NJ & Lukas</title>
     <link rel="stylesheet" href="css/when-where.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const rsvpDeadline = new Date("October 26, 2025 00:00:00").getTime();
+          const now = new Date().getTime();
+    
+          if (now > rsvpDeadline) {
+            const rsvpMenuItem = document.getElementById('rsvpLink');
+            if (rsvpMenuItem) {
+              rsvpMenuItem.style.display = 'none';
+            }
+          }
+        });
+      </script>
 </head>
 <body>
     <header>
@@ -13,10 +26,12 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="rsvp.html">RSVP</a></li>
+                    <li><a href="rsvp.html" id="rsvpLink">RSVP</a></li>
                     <li><a href="when-where.html">When and Where</a></li>
                     <li><a href="info.html">Additional Info</a></li>
-                    <li><a href="entourage.html">Bridal Entourage</a></li>
+                    <li><a href="travelling.html">Travelling in Tunisia</a></li>
+                    <li><a href="getting_ready.html">Getting Ready</a></li>
+
                 </ul>
             </nav>
         </div>
@@ -25,14 +40,12 @@
     <section class="details">
         <div class="container">
             <h2>Ceremony and Reception</h2>
-            <p><strong>Ceremony:</strong> Nabeul</p>
-            <p><strong>Reception:</strong> Nabeul</p>
-            <p>Time: 3:00 PM - Midnight</p>
+            <p><strong>Ceremony:</strong> Nabeul - Tunisia</p>
+            <p><strong>Reception:</strong> Nabeul - Tunisia</p>
+            <p> <strong>Date:</strong> 23 24 26 October</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 NJ & Lukas Wedding</p>
-    </footer>
+
 </body>
 </html>

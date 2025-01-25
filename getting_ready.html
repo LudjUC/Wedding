@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Getting Ready for the Wedding</title>
+  <link rel="stylesheet" href="css/getting_ready.css" />
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const rsvpDeadline = new Date("October 26, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+
+      if (now > rsvpDeadline) {
+        const rsvpMenuItem = document.getElementById('rsvpLink');
+        if (rsvpMenuItem) {
+          rsvpMenuItem.style.display = 'none';
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="container">
+        <h1>Getting Ready</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rsvp.html" id="rsvpLink">RSVP</a></li>
+            <li><a href="when-where.html">When and Where</a></li>
+            <li><a href="info.html">Additional Info</a></li>
+            <li><a href="travelling.html">Travelling in Tunisia</a></li>
+            <li><a href="getting_ready.html">Getting Ready</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="entourage-section">
+      <h2>Getting Ready for the Wedding!!!</h2>
+      
+      <h3>Dress Code</h3>
+      <p>You can wear whatever you want and any color you want. There are no faux pas. Men wear jeans, shorts, suits, tuxedos, etc. Women usually wear fancy dresses (similar to American proms in Disney movies but with more glitter). Nonbinary people and other genders can wear whatever they feel comfortable in. Regardless, please be comfortable and ready to dance!</p>
+      
+      <p>Noorjahan would LOVE for you to rent Tunisian dresses! The rent costs between 50 and 150 dinars, depending on how nice you want the dress to be. All genders can rent dresses. However, the typical male and female dresses differ in style. You can check this out on Google.</p>
+      
+      <p>Please know that Tunisians do not consider this to be cultural appropriation but rather cultural appreciation.</p>
+      
+      <p><strong>HOWEVER</strong>, if you do have a traditional dress from your country, PLEASE definitely wear that with pride! We love the diversity of our friends and family!</p>
+      
+      <h3>Different Days</h3>
+      <p>The first day of the ceremony is for <strong>WOMEN &amp; NONBINARY PEOPLE ONLY</strong>. The men can sit outside if they prefer or they can hang out together! Maybe Lukas will plan something :) During this, only tea and typical sweets are served.</p>
+      <p>The second day is the main celebration, to which everyone is welcome and we expect 400 guests. We will serve tea, water, juice, little snacks (vegetarian available), and Tunisian wedding sweets.</p>
+      <p>The third day is lunch day! We will simply have Nabeul’s wedding couscous, which has only meat and chickpeas. We are still planning the vegetarian/ vegan option.</p>
+      
+      <h3>Gifts</h3>
+      <p>Please know that gifts are not necessary. The fact you are flying to this, renting accommodation, paying for food, and so much more is more than enough! We are so grateful. In Tunisia, it is typical to give the bride an envelope with cash, depending on how much you want to give. You have to write your name on the envelope as well.</p>
+    </section>
+    
+
+  </div>
+</body>
+</html>
