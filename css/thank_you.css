@@ -1,0 +1,85 @@
+/* Body and General Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background-color: #fff5f8; /* Soft pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container for the Thank You Message */
+  .thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: url('https://source.unsplash.com/1600x900/?flowers') no-repeat center center/cover;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    color: #4b2c20; /* Soft brown color for text */
+    background-color: rgba(255, 245, 248, 0.9); /* Overlay background */
+  }
+  
+  /* Card for Text */
+  .thank-you-card {
+    background-color: #ffffff; /* White background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Heading */
+  .thank-you-card h1 {
+    font-size: 2.5rem;
+    color: #e63946; /* Romantic rose red */
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraphs */
+  .thank-you-card p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+  
+  /* Button Back to Home */
+  .button {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: #e63946;
+    color: #ffffff;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #d62839; /* Slightly darker rose */
+    transform: scale(1.05);
+  }
+  
+  /* Media Query for Mobile */
+  @media (max-width: 600px) {
+    .thank-you-card h1 {
+      font-size: 2rem;
+    }
+  
+    .thank-you-card p {
+      font-size: 1rem;
+    }
+  
+    .button {
+      font-size: 1rem;
+    }
+  }
+  

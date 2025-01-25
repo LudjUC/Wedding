@@ -8,8 +8,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-
-      const rsvpDeadline = new Date("October 26, 2025 00:00:00").getTime();
+      const rsvpDeadline = new Date("March 26, 2025 00:00:00").getTime();
       const now = new Date().getTime();
 
       if (now > rsvpDeadline) {
@@ -44,38 +43,54 @@
       <h2>RSVP to Our Wedding</h2>
 
       <div id="rsvpFormContainer">
-        <form action="submit_rsvp.php" method="post">
+        <form
+          action="https://formspree.io/f/mnnjnrpo"
+          method="POST"
+          onsubmit="return validateForm()"
+        >
           <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
 
           <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required />
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Enter a valid email address" 
+            required 
+          />
 
           <label for="attendance">Will you attend?</label>
           <select id="attendance" name="attendance" required>
+            <option value="" disabled selected>Select an option</option>
             <option value="yes">Yes, I'll be there</option>
             <option value="no">Sorry, I can't make it</option>
           </select>
 
           <label for="plusOne">Will you bring a +1?</label>
           <select id="plusOne" name="plusOne" required>
+            <option value="" disabled selected>Select an option</option>
             <option value="no">No</option>
             <option value="yes">Yes</option>
           </select>
 
           <label for="bringKids">Will you bring kids?</label>
           <select id="bringKids" name="bringKids" required>
+            <option value="" disabled selected>Select an option</option>
             <option value="no">No</option>
             <option value="yes">Yes</option>
           </select>
 
           <div id="kidsCountContainer" style="display: none;">
             <label for="kidsCount">How many kids?</label>
-            <input type="number" id="kidsCount" name="kidsCount" min="1">
+            <input type="number" id="kidsCount" name="kidsCount" min="1" placeholder="Enter number of kids" />
           </div>
 
           <label for="diet">Dietary Restrictions</label>
-          <textarea id="diet" name="diet"></textarea>
+          <textarea id="diet" name="diet" placeholder="Optional: Let us know your dietary restrictions"></textarea>
+
+          <!-- Hidden redirect field -->
+          <input type="hidden" name="_redirect" value="https://ludjuc.github.io/Wedding/thank_you.html">
 
           <button type="submit">Submit RSVP</button>
         </form>
@@ -89,8 +104,10 @@
     bringKidsSelect.addEventListener('change', function() {
       if (this.value === 'yes') {
         kidsCountContainer.style.display = 'block';
+        kidsCountContainer.querySelector('input').required = true;
       } else {
         kidsCountContainer.style.display = 'none';
+        kidsCountContainer.querySelector('input').required = false;
       }
     });
 
@@ -99,6 +116,16 @@
     if (now > rsvpDeadline) {
       const rsvpFormContainer = document.getElementById('rsvpFormContainer');
       rsvpFormContainer.innerHTML = "<p>RSVP is now closed. Thank you for your interest!</p>";
+    }
+
+    function validateForm() {
+      const email = document.getElementById('email').value;
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+      return true;
     }
   </script>
 </body>

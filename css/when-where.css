@@ -44,6 +44,44 @@ section {
     flex: 1;
 }
 
+/* Maps Section Styling */
+.maps {
+    padding: 40px 20px;
+}
+
+.maps .location {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding-left: 20px; /* Pulls the content slightly inward */
+}
+
+.maps .map {
+    flex: 1;
+    max-width: 350px; /* Adjust map size */
+    margin-right: 40px; /* Adds space between the map and text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners for the map */
+}
+
+.maps .text {
+    flex: 2;
+}
+
+.maps h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.maps p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
 footer {
     text-align: center;
     padding: 10px 0;
