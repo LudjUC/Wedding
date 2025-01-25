@@ -91,6 +91,7 @@
 
           <!-- Hidden redirect field -->
           <input type="hidden" name="_redirect" value="https://njandlukaswdding.onrender.com/thank_you.html">
+          <input type="hidden" name="_confirmationMessage" value="Thank you for your RSVP! Redirecting...">
 
           <button type="submit">Submit RSVP</button>
         </form>
@@ -99,6 +100,11 @@
   </section>
 
   <script>
+    window.onbeforeunload = () => {
+    for (const form of document.getElementsByTagName('form')) {
+      form.reset();
+    }
+  };
     const bringKidsSelect = document.getElementById('bringKids');
     const kidsCountContainer = document.getElementById('kidsCountContainer');
     bringKidsSelect.addEventListener('change', function() {
