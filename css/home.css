@@ -35,6 +35,15 @@ html, body {
         width: 100%;
     }
 }
+.wnd-align-center h1 {
+    font-size: 2.5rem; /* Increases the size of "Come spend our special day with us!" */
+    font-weight: bold;
+}
+
+.wnd-align-center h3 {
+    font-size: 1.5rem; /* Increases the size of the text under "Come spend our special day with us!" */
+    line-height: 1.8; /* Adds better spacing between lines */
+}
 
 .wrapper {
     display: flex;
